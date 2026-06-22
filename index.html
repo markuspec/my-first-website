@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbook Youth Sports</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #122033;
+    }
+    .hero {
+      background: linear-gradient(135deg, #123f6d, #1f7dd9);
+      color: white;
+      padding: 64px 24px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin: 0 0 12px;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 60ch;
+      line-height: 1.5;
+    }
+    nav {
+      margin-top: 18px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .content {
+      padding: 32px 24px 56px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(18, 35, 64, 0.08);
+    }
+    .quote-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .quote {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(18, 35, 64, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p style="text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; font-weight: 700;">Athlete Development Hub</p>
+      <h1>Build a stronger sports routine from the ground up.</h1>
+      <p>Warmups, mobility work, recovery plans, and expert guidance for young athletes who want to perform better every day.</p>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#stories">Stories</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="container">
+      <section id="services">
+        <h2>What we offer</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Workouts & Mobility</h3>
+            <p>Warmups, stretches, and recovery routines built for young athletes.</p>
+          </article>
+          <article class="card">
+            <h3>Video Demonstrations</h3>
+            <p>Follow clear guidance for each movement and stretch.</p>
+          </article>
+          <article class="card">
+            <h3>Personalized Sports Plan</h3>
+            <p>Build a plan around your sport, schedule, and goals.</p>
+          </article>
+          <article class="card">
+            <h3>Expert Support</h3>
+            <p>Connect with specialists for recovery and performance help.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stories" style="margin-top: 50px;">
+        <h2>Athlete Stories</h2>
+        <div class="quote-grid">
+          <div class="quote">
+            <p>“A consistent warmup and recovery routine helped me stay fresh and confident on the field.”</p>
+            <strong>Mia, Soccer Midfielder</strong>
+          </div>
+          <div class="quote">
+            <p>“Once I trusted my mobility routine, my speed work felt smoother and more controlled.”</p>
+            <strong>Jordan, Track Sprinter</strong>
+          </div>
+          <div class="quote">
+            <p>“Having a clear plan for training and recovery made a huge difference in my routine.”</p>
+            <strong>Avery, Basketball Guard</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
