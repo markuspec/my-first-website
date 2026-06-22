@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workouts | Playbook Youth Sports</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="content-wrap">
+            <h1>Workouts & Mobility</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/plan">AI Plan Builder</a>
+                <a href="/booking">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+        <section>
+            <p>Each routine includes a short video demonstration and practical guidance.</p>
+            <div class="workout-grid">
+                {% for workout in workouts %}
+                <article class="workout-card">
+                    <h2>{{ workout.title }}</h2>
+                    <p><strong>{{ workout.category }}</strong></p>
+                    <p>{{ workout.description }}</p>
+                    <div class="video-wrap">
+                        <iframe src="{{ workout.video }}" title="{{ workout.title }}" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="content-wrap">
+            <p>Structured warmups to help young athletes train smarter.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

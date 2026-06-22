@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Call | Playbook Youth Sports</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="content-wrap">
+            <h1>Book a Support Call</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/workouts">Workouts</a>
+                <a href="/plan">AI Plan Builder</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+        <section>
+            <p>Select a specialist to connect with for personalized physio and sports support.</p>
+            <div class="therapist-grid">
+                {% for therapist in therapists %}
+                <article class="therapist-card">
+                    <h2>{{ therapist.name }}</h2>
+                    <p>{{ therapist.focus }}</p>
+                    <button disabled>Coming soon</button>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="content-wrap">
+            <p>Professional guidance for growth, recovery, and training success.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

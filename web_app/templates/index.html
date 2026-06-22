@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playbook Youth Sports</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="content-wrap">
+            <h1>Playbook Youth Sports</h1>
+            <p>Build strong habits, stay mobile, and train with confidence.</p>
+            <nav>
+                <a href="/workouts">Workouts</a>
+                <a href="/plan">AI Plan Builder</a>
+                <a href="/booking">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+        <section>
+            <h2>What we offer</h2>
+            <div class="cards-row">
+                <article>
+                    <h3>Workouts & Mobility</h3>
+                    <p>Warmups, stretches, and recovery routines designed for young athletes.</p>
+                </article>
+                <article>
+                    <h3>Video Demonstrations</h3>
+                    <p>Follow real lesson-style videos for every movement and stretch.</p>
+                </article>
+                <article>
+                    <h3>Personalized Sports Plan</h3>
+                    <p>Build a plan tailored to your sport, schedule, and experience level.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Athlete Stories</h2>
+            <div class="quotes-grid">
+                {% for item in quotes %}
+                <div class="quote-card">
+                    <p>“{{ item.quote }}”</p>
+                    <strong>{{ item.name }}</strong>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="content-wrap">
+            <p>Future-ready training for young athletes.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
