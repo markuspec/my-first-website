@@ -15,6 +15,7 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="/workouts">Workouts</a>
+                <a href="/body-map">Body Map</a>
                 <a href="/booking">Book a Call</a>
             </nav>
         </div>
@@ -23,6 +24,7 @@
     <main class="content-wrap">
         <section class="form-panel">
             <h2>Build your personal training plan</h2>
+            <p class="subtle-text">Tell us about your sport, goal, and weekly schedule so we can create a more structured routine.</p>
             <form method="post">
                 <label>
                     Athlete Name
@@ -60,7 +62,7 @@
         {% if generated %}
         <section class="plan-result">
             <h2>Personalized Plan for {{ generated.name }}</h2>
-            <p>Sport: {{ generated.sport }} · Goal: {{ generated.goal }} · Sessions: {{ generated.days }}</p>
+            <p class="subtle-text">Sport: {{ generated.sport }} · Goal: {{ generated.goal.title() }} · Sessions: {{ generated.days }}</p>
             <div class="plan-grid">
                 {% for item in generated.plan %}
                 <article>

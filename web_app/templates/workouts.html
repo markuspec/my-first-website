@@ -14,6 +14,7 @@
             <h1>Workouts & Mobility</h1>
             <nav>
                 <a href="/">Home</a>
+                <a href="/body-map">Body Map</a>
                 <a href="/plan">AI Plan Builder</a>
                 <a href="/booking">Book a Call</a>
             </nav>
@@ -22,13 +23,16 @@
 
     <main class="content-wrap">
         <section>
-            <p>Each routine includes a short video demonstration and practical guidance.</p>
+            <p class="subtle-text">Each routine includes a short video demonstration and practical guidance for warmups, recovery, and everyday performance.</p>
             <div class="workout-grid">
                 {% for workout in workouts %}
                 <article class="workout-card">
-                    <h2>{{ workout.title }}</h2>
-                    <p><strong>{{ workout.category }}</strong></p>
-                    <p>{{ workout.description }}</p>
+                    <div>
+                        <p class="pill">{{ workout.category }}</p>
+                        <h2>{{ workout.title }}</h2>
+                        <p>{{ workout.description }}</p>
+                        <p><strong>{{ workout.benefit }}</strong></p>
+                    </div>
                     <div class="video-wrap">
                         <iframe src="{{ workout.video }}" title="{{ workout.title }}" frameborder="0"
                             allowfullscreen></iframe>

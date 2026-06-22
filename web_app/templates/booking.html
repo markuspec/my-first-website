@@ -15,6 +15,7 @@
             <nav>
                 <a href="/">Home</a>
                 <a href="/workouts">Workouts</a>
+                <a href="/body-map">Body Map</a>
                 <a href="/plan">AI Plan Builder</a>
             </nav>
         </div>
@@ -22,13 +23,34 @@
 
     <main class="content-wrap">
         <section>
-            <p>Select a specialist to connect with for personalized physio and sports support.</p>
+            <p class="subtle-text">Select a specialist and choose one of the available time slots below.</p>
+            {% if booking_success %}
+            <div class="success-banner">
+                <p><strong>{{ booking_success.name }}</strong>, your session with {{ booking_success.specialist }} on {{ booking_success.date }} is now booked.</p>
+            </div>
+            {% endif %}
             <div class="therapist-grid">
                 {% for therapist in therapists %}
-                <article class="therapist-card">
+                <article class="therapist-card booking-card">
                     <h2>{{ therapist.name }}</h2>
                     <p>{{ therapist.focus }}</p>
-                    <button disabled>Coming soon</button>
+                    <div class="slot-list">
+                        {% for slot in booking_slots[therapist.name] %}
+                        {% if slot.available %}
+                        <form method="post" class="slot-form">
+                            <input type="text" name="name" placeholder="Your name" required />
+                            <input type="hidden" name="specialist" value="{{ therapist.name }}" />
+                            <input type="hidden" name="day" value="{{ slot.day }}" />
+                            <input type="hidden" name="time" value="{{ slot.time }}" />
+                            <button type="submit">{{ slot.day }} · {{ slot.time }}</button>
+                        </form>
+                        {% else %}
+                        <div class="slot-form booked-slot">
+                            <button type="button" disabled>{{ slot.day }} · {{ slot.time }} (Booked)</button>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </article>
                 {% endfor %}
             </div>

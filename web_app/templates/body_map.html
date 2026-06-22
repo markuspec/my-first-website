@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Map | Playbook Youth Sports</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="content-wrap">
+            <h1>Body Map Focus</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/workouts">Workouts</a>
+                <a href="/plan">AI Plan Builder</a>
+                <a href="/booking">Book a Call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrap">
+        <section class="body-map-panel">
+            <div>
+                <h2>Select a body part</h2>
+                <p class="subtle-text">Choose whether you want a stretch or a workout for that area.</p>
+            </div>
+            <div class="body-map-layout">
+                <div class="body-diagram">
+                    <button class="body-part-button shoulders {% if selected_part == 'shoulders' %}active{% endif %}" data-part="shoulders">Shoulders</button>
+                    <button class="body-part-button arms {% if selected_part == 'arms' %}active{% endif %}" data-part="arms">Arms</button>
+                    <button class="body-part-button back {% if selected_part == 'back' %}active{% endif %}" data-part="back">Back</button>
+                    <button class="body-part-button core {% if selected_part == 'core' %}active{% endif %}" data-part="core">Core</button>
+                    <button class="body-part-button legs {% if selected_part == 'legs' %}active{% endif %}" data-part="legs">Legs</button>
+                </div>
+                <div class="body-focus-panel">
+                    <h3>{{ part_data.label }}</h3>
+                    <p>{{ part_data.description }}</p>
+                    <div class="focus-toggle">
+                        <a href="/body-map?part={{ selected_part }}&focus=stretch" class="toggle-link {% if selected_focus == 'stretch' %}active{% endif %}">Stretch</a>
+                        <a href="/body-map?part={{ selected_part }}&focus=exercise" class="toggle-link {% if selected_focus == 'exercise' %}active{% endif %}">Exercise</a>
+                    </div>
+                    {% if selected_focus == 'exercise' %}
+                    <div class="body-list">
+                        {% for item in part_data.exercises %}
+                        <article>
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.description }}</p>
+                            <p class="routine-time">{{ item.time }}</p>
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="body-list">
+                        {% for item in part_data.stretches %}
+                        <article>
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.description }}</p>
+                            <p class="routine-time">{{ item.time }}</p>
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="content-wrap">
+            <p>Train smarter with body-specific guidance.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.body-part-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const part = button.dataset.part;
+                window.location.href = `/body-map?part=${part}&focus={{ selected_focus }}`;
+            });
+        });
+    </script>
+</body>
+
+</html>
