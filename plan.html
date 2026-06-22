@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Plan Builder | Playbook Youth Sports</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #123; }
+    header { background: #123f6d; color: white; padding: 22px 20px; }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: 700; }
+    main { max-width: 900px; margin: 0 auto; padding: 28px 18px 50px; }
+    .panel { background: white; border-radius: 16px; padding: 22px; box-shadow: 0 8px 22px rgba(18,35,64,.08); }
+    label { display: block; margin-bottom: 12px; font-weight: 700; }
+    input, select, button { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #d7deee; }
+    button { background: #123f6d; color: white; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:1100px;margin:0 auto;">
+      <h1>AI Sports Plan Builder</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="body-map.html">Body Map</a>
+        <a href="booking.html">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Build your personal training plan</h2>
+      <form>
+        <label>Athlete Name<input value="Athlete"></label>
+        <label>Sport<input value="Soccer"></label>
+        <label>Goal<select><option>Strength</option><option>Speed</option><option>Mobility</option></select></label>
+        <label>Weekly Sessions<input type="number" value="3"></label>
+        <button type="button">Generate Plan</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

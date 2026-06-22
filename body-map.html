@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Map | Playbook Youth Sports</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fb; color: #123; }
+    header { background: #123f6d; color: white; padding: 22px 20px; }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: 700; }
+    main { max-width: 1100px; margin: 0 auto; padding: 28px 18px 50px; }
+    .panel { background: white; border-radius: 16px; padding: 22px; }
+    .buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    button { padding: 10px 14px; border: 0; border-radius: 999px; background: #e8eefc; font-weight: 700; }
+    .selected { background: #123f6d; color: white; }
+    .body-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; margin-top: 18px; }
+    .diagram-wrap { background: linear-gradient(180deg, #f7fbff, #eef5ff); border-radius: 18px; padding: 20px; min-height: 520px; position: relative; overflow: hidden; }
+    .diagram {
+      position: relative;
+      width: min(520px, 100%);
+      height: 480px;
+      margin: 0 auto;
+      background: radial-gradient(circle at top, #f9fcff 0%, #dfeeff 55%, #d9eafe 100%);
+      border-radius: 28px;
+      border: 1px solid #d9e7ff;
+      overflow: hidden;
+    }
+    .diagram::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      width: 180px;
+      height: 340px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #f8f6ff 0%, #dfe8ff 100%);
+      border-radius: 999px 999px 40% 40%;
+      box-shadow: inset 0 -18px 22px rgba(18, 35, 64, 0.06);
+    }
+    .body-tag {
+      position: absolute;
+      border: 0;
+      background: rgba(18, 63, 109, 0.08);
+      color: #123f6d;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .body-tag:hover { background: rgba(18, 63, 109, 0.18); }
+    .tag-shoulders { top: 8%; left: 50%; transform: translateX(-50%); }
+    .tag-arms { top: 24%; left: 18%; }
+    .tag-back { top: 24%; right: 18%; }
+    .tag-core { top: 42%; left: 50%; transform: translateX(-50%); }
+    .tag-legs { bottom: 7%; left: 50%; transform: translateX(-50%); }
+    .card { background: #f9faff; border-radius: 12px; padding: 14px; margin-top: 12px; }
+    .focus-toggle { display: flex; gap: 8px; margin: 10px 0; }
+    .focus-toggle button { background: #eef4ff; color: #123f6d; }
+    .focus-toggle .active { background: #123f6d; color: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:1100px;margin:0 auto;">
+      <h1>Body Map Focus</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="workouts.html">Workouts</a>
+        <a href="plan.html">AI Plan Builder</a>
+        <a href="booking.html">Book a Call</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Select a body part</h2>
+      <div class="buttons">
+        <button class="selected">Shoulders</button>
+        <button>Arms</button>
+        <button>Back</button>
+        <button>Core</button>
+        <button>Legs</button>
+      </div>
+      <div class="body-layout">
+        <div class="diagram-wrap">
+          <div class="diagram">
+            <button class="body-tag tag-shoulders">Shoulders</button>
+            <button class="body-tag tag-arms">Arms</button>
+            <button class="body-tag tag-back">Back</button>
+            <button class="body-tag tag-core">Core</button>
+            <button class="body-tag tag-legs">Legs</button>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Shoulders</h3>
+            <p>Great for overhead sports, posture, and upper-body control.</p>
+            <div class="focus-toggle">
+              <button class="active">Stretch</button>
+              <button>Exercise</button>
+            </div>
+            <ul>
+              <li>Cross-Body Shoulder Stretch — 30-45 sec each side</li>
+              <li>Doorway Chest Stretch — 30 sec each side</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
